@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking System</title>
+    <link rel="stylesheet" href="jayy.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Hotel</h1>
+        <p>Enjoy a luxurious stay at our beautiful hotel</p>
+    </header>
+
+    <section class="booking-form">
+        <h2>Book Your Stay</h2>
+        <form id="availabilityForm" novalidate>
+            <label for="checkin">Check-in Date:</label>
+            <input type="text" id="checkin" name="checkin" placeholder="DD/MM">
+        
+            <label for="checkout">Check-out Date:</label>
+            <input type="text" id="checkout" name="checkout" placeholder="DD/MM">
+        
+            <label for="guests">No of Guests:</label>
+            <input type="text" id="guests" name="guests" placeholder="Enter number of guests">
+        
+            <p id="guestWarning" style="color: red; display: none;">Only 3 people are allowed in one room.</p>
+        
+            <button type="button" id="checkAvailability">Check Availability</button>
+        </form>
+    </section>
+      
+    
+    <section id="rooms" style="display: none;">
+        <h2>Available Rooms</h2>
+        <div class="room" data-price="2000">
+            <img src="images/jay.luxury.jpg" alt="Luxury Room">
+            <p>Luxury Room - ₹2000 per night</p>
+        </div>
+        <div class="room" data-price="1500">
+            <img src="images/jay.king.jpeg" alt="King Bed">
+            <p>King Bed - ₹1500 per night</p>
+        </div>
+        <div class="room" data-price="1750">
+            <img src="images/jay.twin.jpg" alt="Twin Bed">
+            <p>Twin Bed - ₹1750 per night</p>
+        </div>
+    
+        <button type="button" id="filterByPrice" style="display: none;">Filter by Price</button>
+    </section>
+    <section id="confirmation" style="display: none;">
+        <form id="bookingForm">
+            <div id="confirmationContent">
+                <p id="confirmationSelectedRoom"></p>
+                <p id="confirmationTotalPrice"></p>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name">
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="yourname@gmail.com" autocomplete="email">
+                
+                    
+                <input type="hidden" id="room" name="room" />
+                <input type="hidden" id="price" name="price" />
+                <input type="hidden" id="checkinHidden" name="checkin" />
+                <input type="hidden" id="checkoutHidden" name="checkout" />
+                <input type="hidden" id="guestsHidden" name="guests" />
+                <button type="submit">Confirm Booking</button>
+            </div>
+        </form>    
+    </section>
+
+    <script src="jayy.js" defer></script>
+</body>
+</html>
+
+
+
